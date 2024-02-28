@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Play">
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube"
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent">
+    </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/youtube"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="start|center"
+            android:id="@+id/tym"
+            android:background="@drawable/baseline_favorite_24"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:gravity="start"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="15sp"
+            android:textColor="@color/black"
+            android:textSize="13.5sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:id="@+id/title"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
