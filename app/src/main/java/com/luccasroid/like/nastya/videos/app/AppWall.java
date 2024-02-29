@@ -3,6 +3,7 @@ package com.luccasroid.like.nastya.videos.app;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,13 +16,23 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class AppWall extends AppCompatActivity {
 
     WebView web;
     String ab;
+    String link;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,6 +41,10 @@ public class AppWall extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_app_wall);
+        sharedPreferences=this.getSharedPreferences("App",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+
+
 
         web = findViewById(R.id.webs);
         Intent intent = getIntent();
@@ -81,8 +96,10 @@ public class AppWall extends AppCompatActivity {
         //kiểm tra vùngcủa sdt
         TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
         String countryIso = tm.getNetworkCountryIso();
+        String links =sharedPreferences.getString("link","");
+        Log.d("ALLLL",links);
         if ((countryIso.equals("vn") || countryIso.equals("VN")) && ab.equals("true") && !isRunningOnEmulator() ) {
-            this.web.loadUrl("https://www.taigamemienphiwk.com/wkleo");
+            this.web.loadUrl(links);
         } else {
             startActivity(new Intent(AppWall.this, MainApp.class));
         }

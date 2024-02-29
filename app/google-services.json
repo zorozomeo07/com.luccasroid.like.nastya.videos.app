@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "809030770452",
+    "project_id": "videos-app-121c9",
+    "storage_bucket": "videos-app-121c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809030770452:android:cd69769829b9a8fd9fec01",
+        "android_client_info": {
+          "package_name": "com.luccasroid.like.nastya.videos.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLKOouZh9WDY0FQeWgPJUJ2MINonkXVto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
